@@ -20,9 +20,10 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->integer('current_team_id');
-            $table->text('two_factor_secret');
-            $table->text('two_factor_recovery_codes');
+            $table->integer('current_team_id')->nullable();
+            $table->text('two_factor_secret')->nullable();
+            $table->text('two_factor_recovery_codes')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

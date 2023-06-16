@@ -27,4 +27,12 @@ class DetailUser extends Model
         'biography'
     ];
 
+    public function user(){
+        return $this->belongsTo('User::class', 'users_id', 'id');
+    }
+
+    function experience_user() {
+        return $this->hasMany(ExperienceUser::class, 'detail_user_id');
+    }
+
 }

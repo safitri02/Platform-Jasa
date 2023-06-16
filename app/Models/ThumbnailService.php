@@ -17,4 +17,8 @@ class ThumbnailService extends Model
         'service_id',
         'thumnail',
     ];
+
+    public function service(){
+        return $this->belongsTo('Service::class', 'service_id', 'id');
+    }
 }

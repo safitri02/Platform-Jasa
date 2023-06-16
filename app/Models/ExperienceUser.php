@@ -23,4 +23,8 @@ class ExperienceUser extends Model
         'user_id',
         'experience '
     ];
+
+    public function detail_user(){
+        return $this->belongsTo('DetailUser::class', 'detail_user_id', 'id');
+    }
 }

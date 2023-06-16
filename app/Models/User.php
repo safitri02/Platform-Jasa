@@ -26,6 +26,22 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function detailuser(){
+        return $this->hasOne('DetailUser::class', 'users_id');
+    }
+
+    public function service(){
+        return $this->hasMany('Service::class', 'users_id');
+    }
+
+    public function order_buyer(){
+        return $this->hasMany('Order::class', 'buyer_id');
+    }
+
+    public function order_freelance(){
+        return $this->hasMany('Order::class', 'freelancer_id');
+    }
+
     protected $hidden = [
         'password',
         'remember_token',

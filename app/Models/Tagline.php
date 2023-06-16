@@ -17,4 +17,8 @@ class Tagline extends Model
         'service_id',
         'tagline',
     ];
+
+    public function service(){
+        return $this->belongsTo('Service::class', 'service_id', 'id');
+    }
 }
